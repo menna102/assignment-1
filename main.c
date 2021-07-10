@@ -81,7 +81,7 @@ void insertatMiddle()
 {
      tag=realloc(tag,(x+1)*sizeof(*tag));
      int p=((x%2)==0)?(x/2):((x+1)/2);
-     printf(" the index  %d \n" ,p);
+     //printf(" the index  %d \n" ,p);
 for (int i=p;i>=0;i--)
         {
             tag[i+1].day=tag[i].day;
@@ -90,7 +90,8 @@ for (int i=p;i>=0;i--)
            tag[i+1].id=tag[i].id;
            tag[i+1].month=tag[i].month;
            strcpy(tag[i+1].name ,tag[i].name);
-           tag[i+1].year=tag[i].year ;   }
+           tag[i+1].year=tag[i].year ;
+             }
 
 
           printf("Enter the student name\n");
@@ -104,13 +105,13 @@ for (int i=p;i>=0;i--)
           x++;
 
 }
-/*void display( )
+void Display( )
 {
-    for (int n = 0; n < x; n++ ) {
+    for (int n = 0; n < size; n++ ) {
           printf ( "%s is %d %d %d , id is %d, grade is %d\n",
                 tag [ n ].name, tag [ n ].day,tag [ n ].month,tag [ n ].year, tag [ n ].id, tag [ n ].grade);
        }
-}*/
+}
 
     int main ()
     {
@@ -120,7 +121,7 @@ for (int i=p;i>=0;i--)
     double timeellapse;
     struct student s;
     int sizeofstruct=sizeof(s);
-    printf(" size of structure %d\n",&sizeofstruct);
+   // printf(" size of structure %d\n",&sizeofstruct);
     printf(" enter the number of student \n");
     fflush(stdin);
     scanf("%d",&size);
@@ -152,9 +153,9 @@ for (int i=p;i>=0;i--)
            timeellapse= (finish-start)/CLOCKS_PER_SEC;
          printf("time taken by the insert at end function  %f \n",timeellapse);
             break;
-          /*case 4:
-            display ();
-            break;*/
+          case 4:
+            Display ();
+            break;
 
           }
           }
